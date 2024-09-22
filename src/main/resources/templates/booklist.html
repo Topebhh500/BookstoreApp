@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Book List</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
-
 </head>
 <body>
 <div class="container mt-5">
@@ -20,6 +19,7 @@
             <th>Publication Year</th>
             <th>ISBN</th>
             <th>Price</th>
+            <th>Category</th> <!-- Added column for Category -->
             <th>Actions</th>
         </tr>
         </thead>
@@ -30,6 +30,7 @@
             <td th:text="${book.publicationYear}"></td>
             <td th:text="${book.isbn}"></td>
             <td th:text="${book.price}"></td>
+            <td th:text="${book.category.name}"></td> <!-- Show category name -->
             <td>
                 <a th:href="@{'/editbook/' + ${book.id}}" class="btn btn-primary btn-sm">Edit</a>
                 <a th:href="@{'/deletebook/' + ${book.id}}" class="btn btn-danger btn-sm"
